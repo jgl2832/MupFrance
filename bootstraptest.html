@@ -30,28 +30,11 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-top"style="background-color:#3D139D;">
       <div class="container" >
-        <div class="navbar-header" >
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="https://twitter.com/hashtag/loitravail" style="background-image:url('http://meetupnow.fr/logo-meetup.png') color:#FFF;width:49px; height:31px;"></a>
-        </div>
-        <div><h3><a href="#" style="text-align:center; color:#FFF">#LoiTravail</a></h3></div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <!--/<form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Adress e-mail" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Code postal" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Je participe</button>
-          </form>-->
-        </div><!--/.navbar-collapse -->
-      </div>
+	  	<div class="row">
+			<div class="col-md-6" style="float:left; padding-top:13px;"><a href="http://www.meetup.com"><img src="http://meetupnow.fr/logo-meetup.png" /></a></div>
+			<div class="col-md-6" style="text-align: right"><h3><a href="#" style="text-align:center; color:#FFF">#LoiTravail</a></h3></div>
+      	</div>
+	  </div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -62,13 +45,13 @@
     <div style="position:absolute; top:50%; text-align:center;" class="col-md-12"><form id="signupForm" class="form-inline">
 			<div class="form-group">
 				<label class="sr-only" for="email">Adresse e-mail</label>
-				<input type="text" name="email" placeholder="Adresse e-mail"/>
+				<input type="text" name="email" value="test@test.test"/>
 			</div>
 			<div class="form-group">
 				<label class="sr-only" for="zip">Code postal</label>
-				<input type="text" name="zip"  placeholder="Code postal"/>
+				<input type="text" name="zip"  value="testZip"/>
 			</div>
-			<input id="signupFormButton" type="button" value="Je participe" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>
+			<input id="signupFormButton" type="button" value="Je participe" class="btn btn-primary" data-toggle="modal" data-target="#myModal"/>
 		  </form>
       		</div>
 
@@ -97,13 +80,13 @@
       <form id="signupForm" class="form-inline">
 			<div class="form-group">
 				<label class="sr-only" for="email">Adresse e-mail</label>
-				<input type="text" name="email" placeholder="Adresse e-mail"/>
+				<input type="text" name="email" value="test@test.test"/>
 			</div>
 			<div class="form-group">
 				<label class="sr-only" for="zip">Code postal</label>
-				<input type="text" name="zip"  placeholder="Code postal"/>
+				<input type="text" name="zip"  value="testZip"/>
 			</div>
-			<input id="signupFormButton" type="button" value="Je participe" class="btn btn-default" style="background-color:#381FCC; color:#FFF;" data-toggle="modal" data-target="#myModal"/>
+			<input id="signupFormButton" type="button" value="Je participe" class="btn btn-primary" data-toggle="modal" data-target="#myModal"/>
 		  </form>
 		  </div>
 
@@ -129,7 +112,7 @@
 				<p>Some text in the modal.</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
