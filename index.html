@@ -1,10 +1,32 @@
 <html>
 	<head>
 		<title>Meetup</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var form = $("#signupForm");
+				var button = $("#signupFormButton");
+				var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
+				button.click( function() {
+					$.post(URL, form.serialize());
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<h1>Meetup thing</h1>
 		<p>This is some meetup things</p>
 		<p>More things</p>
+		<form id="signupForm">
+			<div>
+				<label for="email">Email</label>
+				<input type="text" name="email" value="test@test.test"/>
+			</div>
+			<div>
+				<label for="zip">Zip</label>
+				<input type="text" name="zip"  value="testZip"/>
+			</div>
+			<input id="signupFormButton" type="button" value="RSVP"/>
+		</form>
 	</body>
 </html>
