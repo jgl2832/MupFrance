@@ -1,10 +1,23 @@
-<html>
-	<head>
-		<title>Meetup</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   
+    
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
@@ -15,57 +28,113 @@
 						$.post(URL, form.serialize());
 					});
 				};
-
-				var getTemplateForExisting = function(index, value) {
-					return "<li id='"+index+"'>"+index+" :"+value+"</li>";
-				};
-
-				var getExisting = function() {
-					$.ajax({
-						url: URL,
-						type: 'GET',
-						data: {},
-						success: function(data) {
-							var html = ""; // HTML builder
-							var keyList = Object.keys(data); // Get keys from data
-							keyList.sort(function(a,b) { return data[b]-data[a] }); // Sort descending by count
-							keyList = keyList.slice(0,5); // Get top 5
-
-							// Print HTML for each of the 5
-							$.each(keyList, function(index, v) {
-								html += getTemplateForExisting(v,data[v]);
-							});
-							$("#target").html(html);
-						},
-						dataType: "json"
-					});
-				}
-
-				getExisting();
 				setupForm();
 			});
 		</script>
-	</head>
-	<body>
-		<h1>Meetup thing</h1>
-		<p>This is cool</p>
-		<p>More things</p>
-		<form id="signupForm">
-			<div>
-				<label for="email">Email</label>
-				<input type="text" name="email" value="test@test.test"/>
-			</div>
-			<div>
-				<label for="zip">Zip</label>
-				<input type="text" name="zip"  value="testZip"/>
-			</div>
-			<input id="signupFormButton" type="button" value="RSVP"/>
-		</form>
 
-		<div id="existing">
-			<ul id="target">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top"style="background-color:#3D139D;">
+      <div class="container" >
+	  	<div class="row">
+			<div class="col-md-6" style="float:left; padding-top:13px;"><a href="http://www.meetup.com"><img src="http://meetupnow.fr/logo-meetup.png" /></a></div>
+			<div class="col-md-6" style="text-align: right"><h3><a href="#" style="text-align:center; color:#FFF">#LoiTravail</a></h3></div>
+      	</div>
+	  </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background-color:#4E21B7; padding-bottom:0px">
+      <div class="container" style="background-image:url('http://meetupnow.fr/image-header.png'); background-position:center; height:400px; width:100%;">
+      </div>
+    </div>
+    <div style="position:absolute; top:50%; text-align:center;" class="col-md-12"><form id="signupForm" class="form-inline">
+			<div class="form-group">
+				<label class="sr-only" for="email">Adresse e-mail</label>
+				<input type="text" name="email" placeholder="Adresse e-mail"/>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="zip">Code postal</label>
+				<input type="text" name="zip"  placeholder="Code postal"/>
+			</div>
+			<input id="signupFormButton" type="button" value="Je participe" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>
+		  </form>
+      		</div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h4 style="text-align:center;">Discutez de #LoiTravail / Paris / 10 mars 2016 </h4>
+          <h6 style="text-align:center;padding-top:60px;">RENCONTRES MEETUP</h6>
+        </div>
+        <div class="col-md-12" ><h2 style="text-align:center; padding-top:-30px;">Et si on se rencontrait pour avancer ensemble?</h2></div>
+        <div class="col-md-6 col-md-offset-3">
+          <p>Le gouvernement français annonce sa volonté de changer le code du travail pour faire baisser le chômage. Selon beaucoup, cela implique de laisser tomber certains aquis. Les Français disent NON et se mobilisent contre les changements.</p>
+          <p>Pendant ce temps, on doit trouver une solution pour créer plus d’emploi et retrouver notre joie de vivre en France. Nous pensons que le peuple peut s’organiser tout seul pour mieux vivre. Ensemble, nous pouvons trouver des solutions aux problèmes de la France et les résoudre de manière plus autonome et positive.</p>
+          <p>Tu es étudiant? Tu es freelance? Tu as monté ta boite? Tu galères? Viens partager ton expérience et en apprendre sur les autres. Mieux se comprendre et communiquer peut nous aider à avancer.</p>
+        </div>
+        
+        <div class="col-md-6 col-md-offset-3" style="text-align:center; padding-top:60px;">
+        <h5>OÙ ET QUAND</h5>
+        <address>
+  	<strong>10 mars 2016</strong><br>
+  	19:00<br>
+  	<br>
+  	<strong>Rendez-vous dans des cafés à Paris</strong><br>
+  	Nous vous enverrons les adresses à 15:00
+	</address>
+
+        
+        
+      <form id="signupForm" class="form-inline" style="padding-top:60px;">
+			<div class="form-group" "col-xs-3">
+				<label class="sr-only" for="email">Adresse e-mail</label>
+				<input type="text" name="email" placeholder="Adresse e-mail"/>
+			</div>
+			<div class="form-group" "col-xs-3">
+				<label class="sr-only" for="zip">Code postal</label>
+				<input type="text" name="zip"  placeholder="Code postal"/>
+			</div>
+			<input id="signupFormButton" type="button" value="Je participe" style="background-color:#3D139D; color:#FFF;" data-toggle="modal" data-target="#myModal"/>
+		  </form>
+		  </div>
+
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; A Meetup experiment</p>
+      </footer>
+    </div> <!-- /container -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Modal Header</h4>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the modal.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
-	</body>
+	</div>
+</div>
+
+
+  </body>
 </html>
