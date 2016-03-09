@@ -22,7 +22,16 @@
 			$(document).ready(function(){
 				var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
 				var doPost = function(form) {
-					$.post(URL, form.serialize());
+					$.ajax({
+						type: "POST",
+						url: URL,
+						data: form.serialize(),
+						success: function(res) {
+							var newCount = res["count"];
+							$("#countTarget").html(newCount);
+						},
+						dataType: "json"
+					});
 				}
 
 				var setupForm = function() {
@@ -135,6 +144,7 @@
 				<h4 class="modal-title">Modal Header</h4>
 			</div>
 			<div class="modal-body">
+				<p>Current count: <span id="countTarget"></span></p>
 				<p>Some text in the modal.</p>
 			</div>
 			<div class="modal-footer">
