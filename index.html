@@ -32,9 +32,6 @@
 					url: URL,
 					data: { "op": "total" },
 					success: countUpdate,
-					failure: function(e) {
-						alert(e);
-					},
 					dataType: "json"
 				});
 			}
@@ -46,9 +43,6 @@
 					url: URL,
 					data: form.serialize(),
 					success: countUpdate,
-					failure: function(e) {
-						alert(e);
-					},
 					dataType: "json"
 				});
 			}
