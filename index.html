@@ -4,12 +4,37 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var form = $("#signupForm");
-				var button = $("#signupFormButton");
 				var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
-				button.click( function() {
-					$.post(URL, form.serialize());
-				});
+				var setupForm = function() {
+					var form = $("#signupForm");
+					var button = $("#signupFormButton");
+					button.click( function() {
+						$.post(URL, form.serialize());
+					});
+				};
+
+				var getTemplateForExisting = function(index, value) {
+					return "<li id='"+index+"'>"+index+" :"+value+"</li>";
+				};
+
+				var getExisting = function() {
+					$.ajax({
+						url: URL,
+						type: 'GET',
+						data: {},
+						success: function(data) {
+							var html = "";
+							$.each(data, function(index, value) {
+								html += getTemplateForExisting(index,value);
+							});
+							$("#target").html(html);
+						},
+						dataType: "json"
+					});
+				}
+
+				getExisting();
+				setupForm();
 			});
 		</script>
 	</head>
@@ -28,5 +53,11 @@
 			</div>
 			<input id="signupFormButton" type="button" value="RSVP"/>
 		</form>
+
+		<div id="existing">
+			<ul id="target">
+
+			</div>
+		</div>
 	</body>
 </html>
