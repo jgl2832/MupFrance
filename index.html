@@ -17,15 +17,25 @@
 					return "<li id='"+index+"'>"+index+" :"+value+"</li>";
 				};
 
+				// Each call to this is an API call! use sparingly
+				var zipLookup = function() {
+
+				}
+
 				var getExisting = function() {
 					$.ajax({
 						url: URL,
 						type: 'GET',
 						data: {},
 						success: function(data) {
-							var html = "";
-							$.each(data, function(index, value) {
-								html += getTemplateForExisting(index,value);
+							var html = ""; // HTML builder
+							var keyList = Object.keys(data); // Get keys from data
+							keyList.sort(function(a,b) { return data[b]-data[a] }); // Sort descending by count
+							keyList = keyList.slice(0,5); // Get top 5
+
+							// Print HTML for each of the 5
+							$.each(keyList, function(index, v) {
+								html += getTemplateForExisting(v,data[v]);
 							});
 							$("#target").html(html);
 						},
