@@ -18,6 +18,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
    
     
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
+				var setupForm = function() {
+					var form = $("#signupForm");
+					var button = $("#signupFormButton");
+					button.click( function() {
+						$.post(URL, form.serialize());
+					});
+				};
+				setupForm();
+			});
+		</script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
