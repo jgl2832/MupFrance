@@ -30,20 +30,21 @@
 				$.ajax({
 					type: "GET",
 					url: URL,
-					data: { "op": "total" },
+					data: { "op": "total", "callback": "?" },
 					success: countUpdate,
-					dataType: "json"
+					dataType: "jsonp"
 				});
 			}
 			doTotalGet()
 			
 			var doPost = function(form) {
+				formData = form.serialize() + "&op=post";
 				$.ajax({
-					type: "POST",
+					type: "GET", // jsonp can't post, so this is actualy a post disguised as a get
 					url: URL,
-					data: form.serialize(),
+					data: formData,
 					success: countUpdate,
-					dataType: "json"
+					dataType: "jsonp"
 				});
 			}
 
