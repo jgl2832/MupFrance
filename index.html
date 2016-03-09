@@ -21,16 +21,20 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
+				var doPost = function(form) {
+					$.post(URL, form.serialize());
+				}
+
 				var setupForm = function() {
 					var form1 = $("#signupForm1");
 					var button1 = $("#signupFormButton1");
 					var form2 = $("#signupForm2");
 					var button2 = $("#signupFormButton2");
 					button1.click( function() {
-						$.post(URL, form1.serialize());
+						doPost(form1);
 					});
 					button2.click( function() {
-						$.post(URL, form2.serialize());
+						doPost(form2);
 					});
 				};
 				setupForm();
