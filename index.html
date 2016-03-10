@@ -55,10 +55,19 @@
 				});
 			}
 
+			var checkEmpty = function(email, zip) {
+				return email.val() == "" || zip.val() == "";
+			}
+
 			var setupForm = function() {
 				var form1 = $("#signupForm1");
+				var email1 = form1.find("input[name=email]");
+				var zip1 = form1.find("input[name=zip]");
 				var button1 = $("#signupFormButton1");
+
 				var form2 = $("#signupForm2");
+				var email2 = form2.find("input[name=email]");
+				var zip2 = form2.find("input[name=zip]");
 				var button2 = $("#signupFormButton2");
 				button1.click( function() {
 					doPost(form1);
@@ -66,6 +75,28 @@
 				button2.click( function() {
 					doPost(form2);
 				});
+
+				email1.on("input", function() {
+					if ( !checkEmpty(email1, zip1) ) {
+						button1.prop("disabled", false);
+					}
+				});
+				zip1.on("input", function() {
+					if ( !checkEmpty(email1, zip1) ) {
+						button1.prop("disabled", false);
+					}
+				});
+				email2.on("input", function() {
+					if ( !checkEmpty(email2, zip2) ) {
+						button2.prop("disabled", false);
+					}
+				});
+				zip2.on("input", function() {
+					if ( !checkEmpty(email2, zip2) ) {
+						button2.prop("disabled", false);
+					}
+				});
+
 			};
 			setupForm();
 		});
@@ -107,7 +138,7 @@
 					</span>
 					<input size=10 type="tel" name="zip"  placeholder="Code postal" class="input-lg form-control"/>
 				</div>
-				<input id="signupFormButton2" type="button" value="J'y vais" class="btn-lg btn" data-toggle="modal" data-target="#myModal" style="background-color:#ED1C40; color:#FFF;"/>
+				<input disabled id="signupFormButton2" type="button" value="J'y vais" class="btn-lg btn" data-toggle="modal" data-target="#myModal" style="background-color:#ED1C40; color:#FFF;"/>
 			</form>
 		</div>
       </div>
@@ -155,7 +186,7 @@
 				</span>
 				<input size=10 type="tel" name="zip"  placeholder="Code postal" class="input-lg form-control"/>
 			</div>
-			<input id="signupFormButton1" class="btn-lg btn btn-primary" type="button" value="J'y vais" style="background-color:#3D139D; color:#FFF;border:none;" data-toggle="modal" data-target="#myModal"/>
+			<input disabled id="signupFormButton1" class="btn-lg btn btn-primary" type="button" value="J'y vais" style="background-color:#3D139D; color:#FFF;border:none;" data-toggle="modal" data-target="#myModal"/>
 		  </form>
 	</div>
 
