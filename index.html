@@ -17,12 +17,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-	<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.8/clipboard.min.js"></script>
+   
     
 	<script type="text/javascript">
 		$(document).ready(function(){
-			new Clipboard('.copy-target');
 			var URL = "https://script.google.com/macros/s/AKfycbxA1AWqOaldIwCyKAcT9-8A04lHbcMTABJrM09w-ixMW35EqBM/exec";
 
 			var countUpdate = function(res) {
@@ -175,12 +173,6 @@
 				<a role="button" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=463440424141459456" class="btn btn-primary btn-lg btn-block"><img src="https://g.twimg.com/dev/documentation/image/Twitter_logo_white_32.png"/>&nbsp;&nbsp;Retweet</a>
 				<a role="button" target="_blank" href="https://www.facebook.com/dialog/share?app_id=2403839689&display=page&href=http://meetupnow.fr&redirect_uri=http://www.meetup.com" class="btn btn-primary btn-lg btn-block"><img src="http://meetupnow.fr/FB-f-Logo__white_29.png" />&nbsp;&nbsp;Share on Facebook</a>
 				<a role="button" target="_blank" href="mailto:?body=#LoiTravail - Le gouvernement français veut changer le code du travail pour faire baisser le chômage. Les Français disent NON et se mobilisent contre le changement&subject=#LoiTravail Apéro Trêve / Paris / 10 mars" class="btn btn-default btn-lg btn-block"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Forward to a friend</a>
-				<div class="input-group">
-					<input id="foo" type="text" class="input-lg form-control" value="http://meetupnow.fr">
-					<span class="input-group-btn">
-						<button class="copy-target btn btn-lg btn-block" data-clipboard-target="#foo">Copy to clipboard</button>
-					</span>
-				</div>
 			</div>
 		<!--	<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
