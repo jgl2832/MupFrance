@@ -112,7 +112,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
         </div>
-        <div class= "col-md-8 col-md-offset-2" ><h2 style="text-align:center; padding-top:-30px; font-weight:bold; font-size:34px;">10 Français autour d’une bière peuvent-ils être plus créatifs que le gouvernement&nbsp;? </h2></div>
+        <div class="col-md-9" ><h2 style="text-align:center; padding-top:-30px; font-weight:bold; font-size:34px;">10 Français autour d’une bière peuvent-ils être plus créatifs que le gouvernement&nbsp;? </h2></div>
         <div class="col-md-6 col-md-offset-3" style="font-size:18px;">
           <p>Et si on changeait d’humeur et qu’on trouvait des solutions pour avancer ensemble&nbsp;?</p>
           <p>Une heure pour faire bouger les choses autour d’un apéro&nbsp;:</p>
@@ -172,9 +172,9 @@
 			<div class="modal-body">
 				<!--<p>Current count: <span class="countTarget"></span></p>-->
 				<p style="text-align:center;">Tu recevras le lieu du rendez-vous par email vendredi à 15h.<br><br>Tu connais un pote qui veut faire bouger les choses&nbsp;? Invite-le</p>
-				<a role="button" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=463440424141459456" class="btn btn-primary btn-lg btn-block"><img src="https://g.twimg.com/dev/documentation/image/Twitter_logo_white_32.png"/>&nbsp;&nbsp;Retweet</a>
-				<a role="button" target="_blank" href="https://www.facebook.com/dialog/share?app_id=2403839689&display=page&href=http://meetupnow.fr&redirect_uri=http://www.meetup.com" class="btn btn-primary btn-lg btn-block"><img src="http://meetupnow.fr/FB-f-Logo__white_29.png" />&nbsp;&nbsp;Partage</a>
-				<a role="button" target="_blank" href="mailto:?body=#LoiTravail - Le gouvernement français veut changer le code du travail pour faire baisser le chômage. Les Français disent NON et se mobilisent contre le changement&subject=#LoiTravail Apéro Trêve / Paris / 10 mars" class="btn btn-default btn-lg btn-block"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Forward to a friend</a>
+				<a role="button" onclick="ga('send', 'social', 'Twitter', 'tweet', 'https://twitter.com/intent/retweet');" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=463440424141459456" class="btn btn-primary btn-lg btn-block"><img src="https://g.twimg.com/dev/documentation/image/Twitter_logo_white_32.png"/>&nbsp;&nbsp;Retweet</a>
+				<a role="button" onclick="ga('send', 'social', 'Facebook', 'post', 'https://www.facebook.com/dialog/share');" target="_blank" href="https://www.facebook.com/dialog/share?app_id=2403839689&display=page&href=http://meetupnow.fr&redirect_uri=http://www.meetup.com" class="btn btn-primary btn-lg btn-block"><img src="http://meetupnow.fr/FB-f-Logo__white_29.png" />&nbsp;&nbsp;Partage</a>
+				<a role="button" onclick="ga('send', 'social', 'Mail', 'send', 'Mail');" target="_blank" href="mailto:?body=#LoiTravail - Le gouvernement français veut changer le code du travail pour faire baisser le chômage. Les Français disent NON et se mobilisent contre le changement&subject=#LoiTravail Apéro Trêve / Paris / 10 mars" class="btn btn-default btn-lg btn-block"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Forward to a friend</a>
 			</div>
 		<!--	<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
