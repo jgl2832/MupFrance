@@ -86,7 +86,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" style="background-color:#4E21B7; padding-bottom:0px">
       <div class="container" style="background-image:url('http://meetupnow.fr/image-header-7.jpg'); background-position:center; height:400px; width:100%;">
-		<div style="top:100%; text-align:center;" class="col-md-12">
+		<div style="top:50%; text-align:center;" class="col-md-12">
 			<form id="signupForm2" class="form-inline">
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1">
@@ -119,7 +119,7 @@
           <p>1.On se retrouve dans un bar de quartier</p>
           <p>2.On échange autour d’un verre avec nos voisins</p>
           <p>3.On se sent mieux et on crée du lien social</p>
-          <p>Le sujet du jour? <a href="https://twitter.com/hashtag/LoiTravail?src=hash" style="color:#4E21B7;">#LoiTravail</a>,<a href="https://twitter.com/search?q=%23chomage&src=typd" style="color:#4E21B7;">#chomage</a>,<a href="https://twitter.com/search?q=%23precarite&src=typd" style="color:#4E21B7;">#precarite</a>,<a href="https://twitter.com/search?q=%23emploi&src=typd" style="color:#4E21B7;">#emploi</a>, <a href="https://twitter.com/search?q=%23emploi&src=typd" style="color:#4E21B7;">#OnVautMieuxQueCa</a></p>
+          <p style="color:#4E21B7;">Le sujet du jour? <a href="https://twitter.com/hashtag/LoiTravail?src=hash">#LoiTravail</a>,<a href="https://twitter.com/search?q=%23chomage&src=typd">#chomage</a>,<a href="https://twitter.com/search?q=%23precarite&src=typd">#precarite</a>,<a href="https://twitter.com/search?q=%23emploi&src=typd">#emploi</a>, <a href="https://twitter.com/search?q=%23emploi&src=typd">#OnVautMieuxQueCa</a></p>
         </div>
         
         <div class="col-md-6 col-md-offset-3" style="text-align:center; padding-top:60px; font-size:18px;">
@@ -172,9 +172,9 @@
 			<div class="modal-body">
 				<!--<p>Current count: <span class="countTarget"></span></p>-->
 				<p style="text-align:center;">We'll email you by 3pm Friday to tell you the location.</p>
-				<a role="button" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=463440424141459456" class="btn btn-primary btn-lg btn-block"><img src="https://g.twimg.com/dev/documentation/image/Twitter_logo_white_32.png"/>&nbsp;&nbsp;Retweet</a>
-				<a role="button" target="_blank" href="https://www.facebook.com/dialog/share?app_id=2403839689&display=page&href=http://meetupnow.fr&redirect_uri=http://www.meetup.com" class="btn btn-primary btn-lg btn-block"><img src="http://meetupnow.fr/FB-f-Logo__white_29.png" />&nbsp;&nbsp;Share on Facebook</a>
-				<a role="button" target="_blank" href="mailto:?body=#LoiTravail - Le gouvernement français veut changer le code du travail pour faire baisser le chômage. Les Français disent NON et se mobilisent contre le changement&subject=#LoiTravail Apéro Trêve / Paris / 10 mars" class="btn btn-default btn-lg btn-block"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Forward to a friend</a>
+				<a role="button" onclick="ga('send', 'social', 'Twitter', 'tweet', 'https://twitter.com/intent/retweet');" target="_blank" href="https://twitter.com/intent/retweet?tweet_id=463440424141459456" class="btn btn-primary btn-lg btn-block"><img src="https://g.twimg.com/dev/documentation/image/Twitter_logo_white_32.png"/>&nbsp;&nbsp;Retweet</a>
+				<a role="button" onclick="ga('send', 'social', 'Facebook', 'post', 'https://www.facebook.com/dialog/share');" target="_blank" href="https://www.facebook.com/dialog/share?app_id=2403839689&display=page&href=http://meetupnow.fr&redirect_uri=http://www.meetup.com" class="btn btn-primary btn-lg btn-block"><img src="http://meetupnow.fr/FB-f-Logo__white_29.png" />&nbsp;&nbsp;Share on Facebook</a>
+				<a role="button" onclick="ga('send', 'social', 'Mail', 'send', 'Mail');" target="_blank" href="mailto:?body=#LoiTravail - Le gouvernement français veut changer le code du travail pour faire baisser le chômage. Les Français disent NON et se mobilisent contre le changement&subject=#LoiTravail Apéro Trêve / Paris / 10 mars" class="btn btn-default btn-lg btn-block"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;Forward to a friend</a>
 			</div>
 		<!--	<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
